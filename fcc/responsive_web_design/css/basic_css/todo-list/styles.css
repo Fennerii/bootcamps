@@ -1,0 +1,24 @@
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  color: black;
+}
+
+a:visited{
+  color:red;
+}
+
+a:active{
+  color: green;
+}
+
+a:focus{
+  color: purple;
+  outline: 2px;
+}
+
+a:link{
+  color: green;
+}
