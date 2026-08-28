@@ -1,6 +1,11 @@
 // filter 
 
-const filterRange = [1,2,3,4,5,6,7,8,9,10];
+const arr = [5,3,8,1];
 
-const range = filterRange.filter(n => n >= 5);
-console.log(range);
+function filterRange(arr, a, b){
+    const filterRange = arr.filter(n => n >= a && n <= b )
+
+    return filterRange;
+}
+
+console.log(filterRange(arr,1,4));
