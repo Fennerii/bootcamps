@@ -44,7 +44,6 @@ pets.after(ul)
 
 const creatediv = document.createElement("div") //made div
 creatediv.setAttribute("id", "create") //gave div id of create
-creatediv.textContent = "hello world"
 
 document.body.append(creatediv)
 
@@ -76,5 +75,76 @@ h1.textContent = "I'm in a div"
 divp.textContent = "ME TOO!"
 
 creatediv.append(blackdiv)
+
+//// inline style
+//div.style.backgroundColor = "blue";
+
+// attributes
+//div.setAttribute("id", "theDiv");
+//div.getAttribute("id");
+//div.removeAttribute("id");
+
+// classes (preferred way to style, instead of inline CSS)
+//div.classList.add("active");
+//div.classList.remove("active");
+//div.classList.toggle("active");
+
+// text vs html
+//div.textContent = "Hello World!";     // safe, treats it as plain text
+//div.innerHTML = "<span>Hi</span>";    // renders HTML — riskier, use sparingly
+
+// exercise 4 Color Switches 
+// Make 5 <div>s (or buttons), 
+// each with a different background-color 
+// (inline style or class, your choice — you already have both tools from Exercise 3). 
+// Add a separate click listener to each one that logs e.target's background color to the console when clicked.
+// A hint given where you're at: build each div fully (create, style, append) like you did with redp/blueh3/blackdiv, 
+// then attach .addEventListener("click", ...) to each one individually before or after appending — 
+// order doesn't matter here since you're not touching .textContent after the fact.
+
+const button1 = document.createElement("button")
+const button2 = document.createElement("button")
+const button3 = document.createElement("button")
+const button4 = document.createElement("button")
+const button5 = document.createElement("button")
+
+button1.textContent="1"
+button1.style.backgroundColor = "red"
+
+button2.textContent="2"
+button2.style.backgroundColor = "blue"
+
+button3.textContent="3"
+button3.style.backgroundColor = "orange"
+
+button4.textContent= "4"
+button4.style.backgroundColor= "purple"
+
+button5.textContent = "5"
+button5.style.backgroundColor = "green"
+
+button1.addEventListener("click", (e) => {
+    if(e.target.style.backgroundColor === "white"){
+        
+        e.target.style.backgroundColor = "red"
+    } else {
+        e.target.style.backgroundColor = "white"
+    }
+});
+
+button1.addEventListener("click", (e) => {
+    const current = Number(e.target.textContent)
+
+    e.target.textContent = current + 1
+    console.log(current)
+})
+
+
+
+
+
+
+
+document.body.append(button1,button2,button3,button4,button5)
 
 
