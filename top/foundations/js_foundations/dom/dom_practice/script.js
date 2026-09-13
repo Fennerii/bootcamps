@@ -108,11 +108,11 @@ const button3 = document.createElement("button")
 const button4 = document.createElement("button")
 const button5 = document.createElement("button")
 
-button1.textContent="1"
-button1.style.backgroundColor = "red"
+button1.textContent="Add One"
+button1.style.backgroundColor = "white"
 
-button2.textContent="2"
-button2.style.backgroundColor = "blue"
+button2.textContent="Subtract One"
+button2.style.backgroundColor = "White"
 
 button3.textContent="3"
 button3.style.backgroundColor = "orange"
@@ -123,23 +123,30 @@ button4.style.backgroundColor= "purple"
 button5.textContent = "5"
 button5.style.backgroundColor = "green"
 
+
+
+
+const DisplaySign = document.createElement("h1")
+DisplaySign.textContent = 0;
+
+document.body.append(DisplaySign)
+
 button1.addEventListener("click", (e) => {
-    if(e.target.style.backgroundColor === "white"){
-        
-        e.target.style.backgroundColor = "red"
-    } else {
-        e.target.style.backgroundColor = "white"
-    }
+
+     const current = Number(DisplaySign.textContent)
+     DisplaySign.textContent = current + 1
+    console.log(current)
 });
 
-button1.addEventListener("click", (e) => {
-    const current = Number(e.target.textContent)
-
-    e.target.textContent = current + 1
+button2.addEventListener("click", (e) =>{
+    const current = Number(DisplaySign.textContent)
+    DisplaySign.textContent = current - 1
     console.log(current)
 })
 
-
+button3.addEventListener("click", (e) =>{
+    const current = Number(DisplaySign)
+})
 
 
 
