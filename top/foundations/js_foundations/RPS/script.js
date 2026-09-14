@@ -1,3 +1,85 @@
+// Connected to the frontend RPS
+
+//human choice
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper")
+const scissors = document.querySelector("#scissors")
+const play = document.querySelector("#play")
+
+let humanChoice;
+let robotChoice;
+let humanscore = 0
+let computerscore = 0
+
+function handleChoice(){
+    console.log(`Player picked ${humanChoice}`)
+}
+
+rock.addEventListener("click", () => {
+    humanChoice = "rock"
+    handleChoice()
+    getComputerChoice();
+})
+
+paper.addEventListener("click", () => {
+    humanChoice = "paper"
+    handleChoice();
+    getComputerChoice();
+})
+
+scissors.addEventListener("click", () =>{
+    humanChoice = "scissors"
+    handleChoice();
+    getComputerChoice();
+})
+
+//robot choice 
+const choices = ["rock","paper","scissors"];
+
+function getComputerChoice(){
+    robotChoice = choices[Math.floor(Math.random() * choices.length)]
+    
+
+    return console.log(robotChoice)
+}
+
+play.addEventListener("click", () => {
+    if(humanChoice == null){
+        console.log("Select a choice")
+    } else {
+        playGame()
+    }
+})
+
+function playGame(){
+
+   if 
+    (
+        robotChoice === "paper" && humanChoice === "rock" ||
+        robotChoice === "scissors" && humanChoice === "paper" ||
+        robotChoice === "rock" && humanChoice === "scissors"
+    ){
+        computerscore++;        
+    } 
+    else{
+        humanscore++;
+    }
+    console.log(`Human Picked ${humanChoice} and Computer picked ${robotChoice}`)
+    console.log(`Score: ${humanscore} - ${computerscore}`);
+        humanChoice = null;
+        robotChoice = null
+    }
+
+
+
+
+
+
+
+
+
+
+/* terminal RPS
 const choices = ["Rock","Paper","Scissors"];
 
 function getComputerChoice(choices){
@@ -48,3 +130,4 @@ function PlayGame(choices){ // pass array down
 }
 
 console.log(PlayGame(choices));
+*/
