@@ -7,11 +7,13 @@ const scissors = document.querySelector("#scissors")
 const play = document.querySelector("#play")
 const hs = document.querySelector("#humanScore")
 const cs = document.querySelector("#computerScore")
+const winner = document.querySelector("#winner")
 
 let humanChoice;
 let robotChoice;
-let humanscore = 0
-let computerscore = 0
+
+
+
 
 function handleChoice(){
     console.log(`Player picked ${humanChoice}`)
@@ -54,6 +56,9 @@ play.addEventListener("click", () => {
 })
 
 function playGame(){
+    let csScore = Number(cs.textContent)
+    let hsScore = Number(hs.textContent)
+
     if(humanChoice === robotChoice){
          console.log("Tie play again")
          return
@@ -64,17 +69,30 @@ function playGame(){
         robotChoice === "scissors" && humanChoice === "paper" ||
         robotChoice === "rock" && humanChoice === "scissors"
     ){
-        const csScore = Number(cs.textContent)
-        cs.textContent = csScore + 1    
+        csScore++
+        cs.textContent = csScore    
     } 
     else{
-        const hsScore = Number(cs.textContent)
-        hs.textContent = hsScore + 1
+        hsScore++
+        hs.textContent = hsScore
+    }
+
+    if(hsScore === 5){
+        winner.textContent = "Human Wins Against The Computer"
+        reset()
+    } else if (csScore === 5) {
+        winner.textContent = "Computer Wins Aginst the Human"
+        reset()
+        
     }
     console.log(`Human Picked ${humanChoice} and Computer Picked ${robotChoice}`)
-
         humanChoice = null;
         robotChoice = null
+    }
+    
+    function reset(){
+        hs.textContent = 0
+        cs.textContent = 0
     }
 
 
