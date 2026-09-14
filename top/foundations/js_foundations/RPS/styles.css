@@ -37,3 +37,18 @@ h1{
 .btn.scissors{
     box-shadow: 5px 5px 5px green;
 }
+
+.btn.play{
+    box-shadow: 5px 5px 5px gold;
+}
+
+.btn.play:hover{
+    box-shadow: 5px 5px 5px black;
+}
+
+.results {
+    margin: 10px;
+    border: 10px solid black;
+    padding: 50px;
+    width: auto;
+}

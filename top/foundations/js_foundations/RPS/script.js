@@ -5,6 +5,8 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper")
 const scissors = document.querySelector("#scissors")
 const play = document.querySelector("#play")
+const hs = document.querySelector("#humanScore")
+const cs = document.querySelector("#computerScore")
 
 let humanChoice;
 let robotChoice;
@@ -40,7 +42,7 @@ function getComputerChoice(){
     robotChoice = choices[Math.floor(Math.random() * choices.length)]
     
 
-    return console.log(robotChoice)
+    return console.log(`Computer picked ${robotChoice}`)
 }
 
 play.addEventListener("click", () => {
@@ -52,20 +54,25 @@ play.addEventListener("click", () => {
 })
 
 function playGame(){
-
-   if 
+    if(humanChoice === robotChoice){
+         console.log("Tie play again")
+         return
+    }
+   else if 
     (
         robotChoice === "paper" && humanChoice === "rock" ||
         robotChoice === "scissors" && humanChoice === "paper" ||
         robotChoice === "rock" && humanChoice === "scissors"
     ){
-        computerscore++;        
+        const csScore = Number(cs.textContent)
+        cs.textContent = csScore + 1    
     } 
     else{
-        humanscore++;
+        const hsScore = Number(cs.textContent)
+        hs.textContent = hsScore + 1
     }
-    console.log(`Human Picked ${humanChoice} and Computer picked ${robotChoice}`)
-    console.log(`Score: ${humanscore} - ${computerscore}`);
+    console.log(`Human Picked ${humanChoice} and Computer Picked ${robotChoice}`)
+
         humanChoice = null;
         robotChoice = null
     }
