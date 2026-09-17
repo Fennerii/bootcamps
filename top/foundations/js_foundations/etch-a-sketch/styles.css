@@ -1,0 +1,50 @@
+body{
+    background-color: #ffc18c;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+h1{
+    justify-content: center;
+    display: flex;
+    background-color: #563232;
+    width: auto;
+    height: 50px;
+    color: wheat;
+    text-shadow: black;
+}
+.main{ /*Affects both */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.square-container{
+    width: 70vw;
+    height: 97vh;
+    border: solid black 2px;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -200px;
+    background-color: white;
+}
+
+.cell{
+    border: solid black 2px;
+    height: 6.25%;
+    width: 6.25%; /* 100 / 16 */
+    box-sizing: border-box;
+}
+
+.color-container{
+    height: 70px;
+
+    border: 2px solid black;
+   
+}
