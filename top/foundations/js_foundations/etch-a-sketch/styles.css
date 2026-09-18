@@ -3,8 +3,7 @@ body{
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
+    min-height: 100vh;
 }
 
 h1{
@@ -16,6 +15,7 @@ h1{
     color: wheat;
     text-shadow: black;
 }
+
 .main{ /*Affects both */
     display: flex;
     flex-direction: row;
@@ -25,13 +25,12 @@ h1{
 }
 
 .square-container{
-    width: 70vw;
+    width: 50vw;
     height: 97vh;
     border: solid black 2px;
 
     display: flex;
     flex-wrap: wrap;
-    margin-left: -200px;
     background-color: white;
 }
 
@@ -43,8 +42,68 @@ h1{
 }
 
 .color-container{
-    height: 70px;
-
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    height: 50vh;
+    width: 200px;
     border: 2px solid black;
    
+}
+
+.color{
+    border: solid 2px black;
+    height: 50px;
+    width: 40px;
+}
+
+.color.red{
+    background-color: red;
+}
+
+.color.orange{
+    background-color: orange;
+}
+
+.color.yellow{
+    background-color: yellow;
+}
+
+.color.green{
+    background-color: green;
+}
+
+.color.blue{
+    background-color: blue
+}
+
+.color.indigo{
+    background-color: indigo;
+}
+
+.color.violet{
+    background-color: violet;
+}
+
+.color.black{
+    background-color: black;
+}
+
+.color.brown{
+    background-color: brown;
+}
+
+.color.white{
+    background-color: white;
+}
+
+.color.eraser{
+
+}
+
+.color.brush{
+
 }
