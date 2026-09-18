@@ -1,4 +1,14 @@
 const grid = document.querySelector(".square-container");
+const red = document.querySelector(".red");
+const orange = document.querySelector(".orange");
+const yellow = document.querySelector(".yellow");
+const green = document.querySelector(".green");
+const blue = document.querySelector(".blue");
+const indigo = document.querySelector(".indigo");
+const violet = document.querySelector(".violet");
+const black = document.querySelector(".black");
+const brown = document.querySelector(".brown");
+const white = document.querySelector(".white") 
 
 
 // Box Start
@@ -17,3 +27,7 @@ grid.addEventListener("click", function(e){
         e.target.style.backgroundColor = "green";
     }
 });
+
+// brush change
+// target cell
+
