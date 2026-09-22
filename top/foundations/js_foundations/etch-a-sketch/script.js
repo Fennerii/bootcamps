@@ -8,8 +8,9 @@ const indigo = document.querySelector(".indigo");
 const violet = document.querySelector(".violet");
 const black = document.querySelector(".black");
 const brown = document.querySelector(".brown");
-const rainbow = document.querySelector(".rainbow");
 const eraser = document.querySelector(".eraser");
+const brushbtn = document.querySelector(".brush");
+
 
 let defaultColor= "black"
 let brush = false 
@@ -61,18 +62,38 @@ black.addEventListener("click", function(e){
 brown.addEventListener("click", function(e){
     defaultColor = "brown"
 })
+//end of colors
 
+//start of utils
 eraser.addEventListener("click", function(e){
     defaultColor = "white"
 })
-// end of color selectors
+
+brushbtn.addEventListener("click", function(e){
+    if(!brush){
+        brush = true
+    } else {
+        brush = false
+    }
+})
+//end of utils
 
 
-    grid.addEventListener("click", function(e){
-    if(e.target.classList.contains("cell")){
+grid.addEventListener("click", function(e){
+    if(brush && e.target.classList.contains("cell")){
         e.target.style.backgroundColor = defaultColor;
     }
 });
+
+grid.addEventListener("mouseover", function(e){
+    if(!brush && e.target.classList.contains("cell")){
+        e.target.style.backgroundColor = defaultColor;
+    }
+})
+
+
+
+    
 
 
 
