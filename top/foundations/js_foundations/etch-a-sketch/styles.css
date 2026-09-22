@@ -96,14 +96,14 @@ h1{
     background-color: brown;
 }
 
-.color.white{
-    background-color: white;
+.color.rainbow{
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet); ;
 }
 
 .color.eraser{
-
+    background-color: white;
 }
 
 .color.brush{
-
+    
 }
