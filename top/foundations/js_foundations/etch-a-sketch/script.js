@@ -8,8 +8,11 @@ const indigo = document.querySelector(".indigo");
 const violet = document.querySelector(".violet");
 const black = document.querySelector(".black");
 const brown = document.querySelector(".brown");
-const white = document.querySelector(".white") 
+const rainbow = document.querySelector(".rainbow");
+const eraser = document.querySelector(".eraser");
 
+let defaultColor= "black"
+let brush = false 
 
 // Box Start
 const size = 16;
@@ -22,11 +25,58 @@ for(let i = 0; i < size * size; i++){
 }
 //end of Box
 
-grid.addEventListener("click", function(e){
+//color selectors
+red.addEventListener("click", function(e){
+    defaultColor = "red";
+})
+
+orange.addEventListener("click", function(e){
+    defaultColor = "orange";
+})
+
+yellow.addEventListener("click", function(e){
+    defaultColor = "yellow"
+})
+
+green.addEventListener("click", function(e){
+    defaultColor = "green"
+})
+
+blue.addEventListener("click",function(e){
+    defaultColor = "blue"
+})
+
+indigo.addEventListener("click", function(e){
+    defaultColor = "indigo"
+})
+
+violet.addEventListener("click", function(e){
+    defaultColor = "violet"
+})
+
+black.addEventListener("click", function(e){
+    defaultColor = "black"
+})
+
+brown.addEventListener("click", function(e){
+    defaultColor = "brown"
+})
+
+eraser.addEventListener("click", function(e){
+    defaultColor = "white"
+})
+// end of color selectors
+
+
+    grid.addEventListener("click", function(e){
     if(e.target.classList.contains("cell")){
-        e.target.style.backgroundColor = "green";
+        e.target.style.backgroundColor = defaultColor;
     }
 });
+
+
+
+
 
 // brush change
 // target cell
