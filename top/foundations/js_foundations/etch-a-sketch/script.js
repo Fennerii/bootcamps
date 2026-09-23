@@ -10,13 +10,28 @@ const black = document.querySelector(".black");
 const brown = document.querySelector(".brown");
 const eraser = document.querySelector(".eraser");
 const brushbtn = document.querySelector(".brush");
+const reset = document.querySelector(".reset");
 
 
 let defaultColor= "black"
-let brush = false 
+let brush = true
 
-// Box Start
-const size = 16;
+//start of box function
+function canvasSetUp(){
+
+    grid.innerHTML = "";
+
+    let size = prompt("How big do you want your canvas?")
+    size = size;
+
+    if(isNaN(size) || size <= 0 || size >= 100){
+        size = 16;
+    }
+
+    // even
+    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
 
 for(let i = 0; i < size * size; i++){
     const cell = document.createElement("div");
@@ -24,7 +39,13 @@ for(let i = 0; i < size * size; i++){
 
     grid.append(cell)
 }
-//end of Box
+}
+// end of box function
+
+document.addEventListener('DOMContentLoaded', () => {
+    canvasSetUp();
+})
+
 
 //color selectors
 red.addEventListener("click", function(e){
@@ -76,6 +97,11 @@ brushbtn.addEventListener("click", function(e){
         brush = false
     }
 })
+
+reset.addEventListener("click", function(e){
+    canvasSetUp();
+});
+
 //end of utils
 
 
