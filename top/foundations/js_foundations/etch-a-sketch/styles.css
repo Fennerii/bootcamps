@@ -4,6 +4,7 @@ body{
     padding: 0;
     width: 100%;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 h1{
@@ -14,6 +15,7 @@ h1{
     height: 50px;
     color: wheat;
     text-shadow: black;
+    margin-top: 0px;
 }
 
 .main{ /*Affects both */
@@ -21,7 +23,7 @@ h1{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 50px;
 }
 
 .square-container{
@@ -29,15 +31,12 @@ h1{
     height: 97vh;
     border: solid black 2px;
 
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     background-color: white;
 }
 
 .cell{
     border: solid black 2px;
-    height: 6.25%;
-    width: 6.25%; /* 100 / 16 */
     box-sizing: border-box;
 }
 
@@ -51,7 +50,6 @@ h1{
     height: 50vh;
     width: 200px;
     border: 2px solid black;
-   
 }
 
 .color{
@@ -107,5 +105,14 @@ h1{
 }
 
 .color.brush{
-    
+    background-color: white;
+}
+
+.color.reset{
+    background-color: white;
+}
+
+.icon{
+    display: block;
+    margin: auto;
 }
