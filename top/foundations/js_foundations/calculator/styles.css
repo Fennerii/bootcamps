@@ -1,0 +1,16 @@
+.calc-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 50vw;
+    background-color: rgb(211, 225, 222);
+    overflow: hidden;
+    margin: auto;
+}
+
+.screen{
+    height: 100px;
+    background-color: lightblue;
+    width: 50px;
+}
