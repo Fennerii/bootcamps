@@ -117,11 +117,58 @@ add.addEventListener("click", () => {
     console.log(total);
 })
 
+subtract.addEventListener("click", () => {
+    operator = "-"
+    num1 = Number(total)
+    numstack.length = 0
+    total = 0;
+    console.log(num1);
+    console.log(total);
+})
+
+multi.addEventListener("click", () => {
+    operator = "x"
+    num1 = Number(total)
+    numstack.length = 0
+    total = 0;
+    console.log(num1);
+    console.log(total);
+})
+
+divison.addEventListener("click", () => {
+    operator = "/"
+    num1 = Number(total)
+    numstack.length = 0
+    total = 0;
+    console.log(num1);
+    console.log(total);
+})
+
+
+
 equals.addEventListener("click", () => {
         num2=Number(total);
         switch(operator){
             case "+":
             displaytotal = num1 + num2
+            display.textContent = displaytotal
+            console.log(displaytotal)
+            break;
+
+            case "-":
+            displaytotal = num1 - num2
+            display.textContent = displaytotal
+            console.log(displaytotal)
+            break;
+
+            case "x":
+            displaytotal = num1 * num2
+            display.textContent = displaytotal
+            console.log(displaytotal)
+            break;
+
+            case "/":
+            displaytotal = num1 / num2
             display.textContent = displaytotal
             console.log(displaytotal)
             break;
