@@ -16,6 +16,7 @@ const divison = document.querySelector(".division");
 const pi = document.querySelector(".pi");
 const negpos = document.querySelector(".negpos");
 const expo = document.querySelector(".exponent")
+const mod = document.querySelector(".modulo")
 const equals = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
 
@@ -111,6 +112,22 @@ nine.addEventListener("click", () => {
     console.log(total);
 })
 
+pi.addEventListener("click", () =>{
+    numstack.push(3.14);
+    total = numstack.join("");
+    display.textContent = total;
+    console.log(total);
+})
+
+negpos.addEventListener("click", () =>{
+    numstack.push("-");
+    total = numstack.join("");
+    display.textContent = total;
+    console.log(total);
+})
+
+//opps
+
 add.addEventListener("click", () => {
     operator = "+"
     num1 = Number(total) 
@@ -147,6 +164,23 @@ divison.addEventListener("click", () => {
     console.log(total);
 })
 
+expo.addEventListener("click", () => {
+    operator = "^"
+    num1 = Number(total)
+    numstack.length = 0
+    total = 0;
+    console.log(num1);
+    console.log(total);
+})
+
+mod.addEventListener("click", () => {
+    operator = "%"
+    num1 = Number(total)
+    numstack.length = 0
+    total = 0;
+    console.log(num1);
+    console.log(total);
+})
 
 
 equals.addEventListener("click", () => {
@@ -175,6 +209,19 @@ equals.addEventListener("click", () => {
             display.textContent = displaytotal.toFixed(3)
             console.log(displaytotal)
             break;
+
+            case "^":
+            displaytotal = num1 ** num2
+            display.textContent = displaytotal
+            console.log(displaytotal)
+            break;
+
+            case "%":
+            displaytotal = num1 % num2
+            display.textContent = displaytotal
+            console.log(displaytotal)
+            break;
+                
         }
     }
   
