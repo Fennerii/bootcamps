@@ -19,6 +19,7 @@ const expo = document.querySelector(".exponent")
 const mod = document.querySelector(".modulo")
 const equals = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
+const sd = document.querySelector(".arr");
 
 
 let numstack = [];
