@@ -13,6 +13,9 @@ const add = document.querySelector(".add");
 const subtract = document.querySelector(".subtract");
 const multi = document.querySelector(".multiply");
 const divison = document.querySelector(".division");
+const pi = document.querySelector(".pi");
+const negpos = document.querySelector(".negpos");
+const expo = document.querySelector(".exponent")
 const equals = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
 
@@ -169,7 +172,7 @@ equals.addEventListener("click", () => {
 
             case "/":
             displaytotal = num1 / num2
-            display.textContent = displaytotal
+            display.textContent = displaytotal.toFixed(3)
             console.log(displaytotal)
             break;
         }
