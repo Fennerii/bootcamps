@@ -5,7 +5,7 @@ const three = document.querySelector(".three");
 const four = document.querySelector(".four");
 const five = document.querySelector(".five");
 const six = document.querySelector(".six");
-const seven = document.querySelector(".sever");
+const seven = document.querySelector(".seven");
 const eight = document.querySelector(".eight");
 const nine = document.querySelector(".nine");
 const display = document.querySelector(".screen");
@@ -25,17 +25,88 @@ let num2
 let operator = null
 display.textContent = displaytotal
 
+/* could use this 
+const numButtons = document.querySelectorAll(".num");
 
+numButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    numstack.push(button.textContent);
+    total = numstack.join("");
+    display.textContent = total;
+  });
+});
+*/
+
+zero.addEventListener("click", () => {
+    numstack.push(3);
+    total = numstack.join("")
+    display.textContent = total;
+    console.log(total);
+})
 
 one.addEventListener("click", () => {    
     numstack.push(1);
     total = numstack.join("") 
-    displaytotal = numstack.join("")
     display.textContent = total
     console.log(total)
 
 });
 
+two.addEventListener("click", () => {
+    numstack.push(2); // get two
+    total = numstack.join("") // for joining together array indexes without the common 2,2 becomes 22
+    display.textContent = total; //display
+    console.log(total); //bug fix
+})
+
+three.addEventListener("click", () => {
+    numstack.push(3);
+    total = numstack.join("")
+    display.textContent = total;
+    console.log(total);
+})
+
+four.addEventListener("click", () => {
+    numstack.push(4);
+    total = numstack.join("")
+    display.textContent = total;
+    console.log(total);
+})
+
+five.addEventListener("click", () => {
+    numstack.push(5);
+    total = numstack.join("")
+    display.textContent = total;
+    console.log(total);
+})
+
+six.addEventListener("click", () => {
+    numstack.push(6);
+    total = numstack.join("")
+    display.textContent = total;
+    console.log(total);
+})
+
+seven.addEventListener("click", () => {
+    numstack.push(7);
+    total = numstack.join("")
+    display.textContent = total;
+    console.log(total);
+})
+
+eight.addEventListener("click", () => {
+    numstack.push(8);
+    total = numstack.join("")
+    display.textContent = total;
+    console.log(total);
+})
+
+nine.addEventListener("click", () => {
+    numstack.push(9);
+    total = numstack.join("")
+    display.textContent = total;
+    console.log(total);
+})
 
 add.addEventListener("click", () => {
     operator = "+"
