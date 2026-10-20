@@ -43,7 +43,7 @@ numButtons.forEach((button) => {
 */
 
 zero.addEventListener("click", () => {
-    numstack.push(3);
+    numstack.push(0);
     total = numstack.join("")
     display.textContent = total;
     console.log(total);
@@ -132,13 +132,20 @@ negpos.addEventListener("click", () =>{
 add.addEventListener("click", () => {
     operator = "+"
     num1 = Number(total) 
-    numstack.length = 0
     total = 0;
     console.log(num1)
     console.log(total);
-})
+    console.log(operator)
+   })
+
+   
+
 
 subtract.addEventListener("click", () => {
+    if (operator != null && num2 != null ){
+        calcresult(num1,num2,operator)
+        
+    }
     operator = "-"
     num1 = Number(total)
     numstack.length = 0
@@ -185,6 +192,18 @@ mod.addEventListener("click", () => {
 
 
 equals.addEventListener("click", () => {
+        calcresult(num1,num2,operator);
+})
+
+clear.addEventListener("click", () =>{
+    numstack.length = 0;
+    display.textContent = 0
+    operator = null;
+    console.log(numstack);
+})
+
+
+function calcresult(num1,num2,operator){
         num2=Number(total);
         switch(operator){
             case "+":
@@ -226,10 +245,3 @@ equals.addEventListener("click", () => {
         }
     }
   
-)
-
-clear.addEventListener("click", () =>{
-    numstack.length = 0;
-    display.textContent = 0
-    console.log(numstack);
-})
