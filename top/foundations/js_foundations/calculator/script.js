@@ -43,15 +43,58 @@ one.addEventListener("click", () =>{
     numstack.push(1)
     temp = numstack.join("")
     display.textContent = temp
-    console.log("temp =" + temp)
 })
 
 two.addEventListener("click", () =>{
     numstack.push(2);
     temp = numstack.join("")
     display.textContent = temp
-    console.log("temp = " + temp)
 })
+
+three.addEventListener("click", () => {
+    numstack.push(3)
+    temp = numstack.join("")
+    display.textContent = temp
+
+})
+
+four.addEventListener("click", () =>{
+    numstack.push(4)
+    temp = numstack.join("")
+    display.textContent = temp
+})
+
+five.addEventListener("click", () =>{
+    numstack.push(5)
+    temp = numstack.join("")
+    display.textContent = temp
+})
+
+six.addEventListener("click", () =>{
+    numstack.push(6)
+    temp = numstack.join("")
+    display.textContent = temp
+})
+
+seven.addEventListener("click", () =>){
+    numstack.push(7)
+    temp = numstack.join("")
+    display.textContent = temp
+}
+
+eight.addEventListener("click", () => {
+    numstack.push(8)
+    temp = numstack.join("")
+    display.textContent = temp
+})
+
+nine.addEventListener("click", () =>{
+    numstack.push(9)
+    temp = numstack.join("")
+    display.textContent = temp
+})
+
+
 
 add.addEventListener("click", () =>{
     if(operator === null){
@@ -62,7 +105,10 @@ add.addEventListener("click", () =>{
         numstack.length = 0;
     } else {
         num2 = temp
+        console.log(num1)
+        console.log(num2)
         let result = addbtn(num1, num2)
+        //this
         num1 = result;
         numstack.length = 0;
     }
