@@ -19,7 +19,6 @@ const expo = document.querySelector(".exponent")
 const mod = document.querySelector(".modulo")
 const equals = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
-const sd = document.querySelector(".arr");
 
 let num1
 let num2
@@ -50,8 +49,17 @@ function calc(num1, num2,op){
         break;
 
         case "/":
-            total = Number(num1) / Number(num2)
-            display.textContent = Number(total)
+            if(total === 0){
+                display.textContent = "booo"
+                num1 = null
+                num2 = null
+                temp = null
+                operator = null
+                numstack.length = 0  
+            } else {
+                total = Number(num1) / Number(num2)
+                display.textContent = "booo"
+            }
         break;
 
         case "%":
@@ -65,7 +73,7 @@ function calc(num1, num2,op){
         break;
     }
 
-    display.textContent = total
+    display.textContent = Number(total.toFixed(2))
     return total
 }
 
