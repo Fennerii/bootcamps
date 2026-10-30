@@ -39,6 +39,14 @@ function addbtn(num1, num2){
     return total
 }
 
+// start of buttons //
+zero.addEventListener("click", () =>{
+    numstack.push(0)
+    temp = numstack.join("")
+    display.textContent = temp
+})
+
+
 one.addEventListener("click", () =>{
     numstack.push(1)
     temp = numstack.join("")
@@ -76,12 +84,12 @@ six.addEventListener("click", () =>{
     display.textContent = temp
 })
 
-seven.addEventListener("click", () =>){
+seven.addEventListener("click", () =>{
     numstack.push(7)
     temp = numstack.join("")
     display.textContent = temp
-}
-
+})
+   
 eight.addEventListener("click", () => {
     numstack.push(8)
     temp = numstack.join("")
@@ -94,7 +102,7 @@ nine.addEventListener("click", () =>{
     display.textContent = temp
 })
 
-
+// end of buttons // 
 
 add.addEventListener("click", () =>{
     if(operator === null){
