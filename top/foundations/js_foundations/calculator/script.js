@@ -13,7 +13,7 @@ const add = document.querySelector(".add");
 const subtract = document.querySelector(".subtract");
 const multi = document.querySelector(".multiply");
 const divison = document.querySelector(".division");
-const pi = document.querySelector(".pi");
+const deci = document.querySelector(".deci");
 const negpos = document.querySelector(".negpos");
 const expo = document.querySelector(".exponent")
 const mod = document.querySelector(".modulo")
@@ -21,21 +21,51 @@ const equals = document.querySelector(".equals");
 const clear = document.querySelector(".clear");
 const sd = document.querySelector(".arr");
 
-
 let num1
 let num2
 let temp
 let total
 let operator = null;
 let numstack = []
+let result
 display.textContent = Number(0)
 
-function addbtn(num1, num2){
-    
-    total = Number(num1) + Number(num2)
-    console.log(total)
-    display.textContent = Number(total)
+function calc(num1, num2,op){
 
+    switch (op){
+        case "+":
+            total = Number(num1) + Number(num2)
+            console.log(total)
+            display.textContent = Number(total)
+        break; 
+
+        case "-":
+            total = Number(num1) - Number(num2)
+            display.textContent = Number(total)
+        break;
+        
+        case "x":
+            total = Number(num1) * Number(num2)
+            display.textContent = Number(total)
+        break;
+
+        case "/":
+            total = Number(num1) / Number(num2)
+            display.textContent = Number(total)
+        break;
+
+        case "%":
+            total = Number(num1) % Number(num2)
+            display.textContent = Number(total)
+        break; 
+
+        case "^":
+            total = Number(num1) ** Number(num2)
+            display.textContent = Number(total)
+        break;
+    }
+
+    display.textContent = total
     return total
 }
 
@@ -45,7 +75,6 @@ zero.addEventListener("click", () =>{
     temp = numstack.join("")
     display.textContent = temp
 })
-
 
 one.addEventListener("click", () =>{
     numstack.push(1)
@@ -102,22 +131,139 @@ nine.addEventListener("click", () =>{
     display.textContent = temp
 })
 
+deci.addEventListener("click", () => {
+    numstack.push(".")
+    temp = numstack.join("")
+    display.textContent = temp
+})
+
+negpos.addEventListener("click", () => {
+    numstack.push("-")
+    temp = numstack.join("")
+    display.textContent = temp
+})
+
 // end of buttons // 
+// Operation // 
+
+clear.addEventListener("click", () =>{
+    numstack.length = 0;
+    display.textContent = 0
+    num1 = null
+    num2 = null
+    temp = null
+    operator = null
+})
 
 add.addEventListener("click", () =>{
-    if(operator === null){
+     if(operator === null){
         num1 = temp
         operator = "+"
-        console.log("num 1 = " + num1)
-        console.log(operator)
         numstack.length = 0;
+        temp = null
     } else {
         num2 = temp
-        console.log(num1)
-        console.log(num2)
-        let result = addbtn(num1, num2)
-        //this
-        num1 = result;
+        result = calc(num1, num2,operator)
+        operator = "+"
+        num1 = result
         numstack.length = 0;
+        temp = null
     }
-} )
+})
+
+
+subtract.addEventListener("click", () =>{
+    if(operator === null){
+        num1 = temp
+        operator = "-"
+        numstack.length = 0;
+        temp = null
+    } else {
+        num2 = temp
+        result = calc(num1, num2,operator)
+        operator = "-"
+        num1 = result
+        numstack.length = 0;
+        temp = null
+    }
+})
+
+multi.addEventListener("click", () => {
+     if(operator === null){
+        num1 = temp
+        operator = "x"
+        numstack.length = 0;
+        temp = null
+    } else {
+        num2 = temp
+        result = calc(num1, num2,operator)
+        operator = "x"
+        num1 = result
+        numstack.length = 0;
+        temp = null
+    }
+})
+   
+
+divison.addEventListener("click", () => {
+      if(operator === null){
+        num1 = temp
+        operator = "/"
+        numstack.length = 0;
+        temp = null
+    } else {
+        num2 = temp
+        result = calc(num1, num2,operator)
+        operator = "/"
+        num1 = result
+        numstack.length = 0;
+        temp = null
+    }
+})
+
+mod.addEventListener("click", () => {
+       if(operator === null){
+        num1 = temp
+        operator = "%"
+        numstack.length = 0;
+        temp = null
+    } else {
+        num2 = temp
+        result = calc(num1, num2,operator)
+        operator = "%"
+        num1 = result
+        numstack.length = 0;
+        temp = null
+    }
+})
+
+expo.addEventListener("click", () => {
+        if(operator === null){
+        num1 = temp
+        operator = "^"
+        numstack.length = 0;
+        temp = null
+    } else {
+        num2 = temp
+        result = calc(num1, num2,operator)
+        operator = "^"
+        num1 = result
+        numstack.length = 0;
+        temp = null
+    }
+})
+
+
+equals.addEventListener("click", () => {
+    if(operator != null){
+        num2= temp
+        result = calc(num1, num2, operator)
+
+        num1 = null
+        num2 = null
+        temp = null
+        operator = null
+        numstack.length = 0  
+    }
+})
+
