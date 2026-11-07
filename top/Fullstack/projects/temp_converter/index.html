@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Temp Converter</h1>
+        <div class="inside">
+        <form>
+            <label for="temp">Enter Starting Temp</label>
+            <input type="number" id="temp" name="test">
+            <fieldset>
+                <legend>Starting Unit</legend>
+                <div class="radios">
+                    <div>
+                    <label for="f">Fahrenheit</label>
+                    <input type="radio" id="f" name="startTemp" value="f">
+                </div>
+                <div>
+                    <label for="c">Celsius</label>
+                    <input type="radio" id="c" name="startTemp" value="c">
+                </div>
+                <div>
+                    <label for="k">Kelvin</label>
+                    <input type="radio" id="k" name="startTemp" value="c">
+                </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="finals">
+                <legend>Conversions</legend>
+            </fieldset>
+        </form>
+        </div>
+    </div>
+    
+</body>
+</html>
