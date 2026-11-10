@@ -20,6 +20,7 @@ body {
     align-items: center;
     margin: auto;
     border: 2px solid black;
+    height: 50%;
     width: 75vw;
     background-color: rgb(240, 235, 235);
     opacity: 70%;
